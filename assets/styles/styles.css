@@ -1,0 +1,11 @@
+/* .prueba{
+    display: grid;
+    grid-template-areas: 'AA BB CC DD';
+} */
+.prueba.verde{
+    background-color: green;
+}
+
+.prueba.rojo{
+    background-color: red;
+}
