@@ -17,3 +17,5 @@ class Result{
 
 const app = new Result();
 console.log(app.showResult());
+
+export {Result};

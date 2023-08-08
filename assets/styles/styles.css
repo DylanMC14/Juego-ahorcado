@@ -1,11 +1,39 @@
-/* .prueba{
-    display: grid;
-    grid-template-areas: 'AA BB CC DD';
-} */
-.prueba.verde{
+.prueba{
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#title{
+    display: flex;
+    justify-content: center;
+}
+.botones{
+    background-color: rgba(0, 255, 234, 0.326);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.verde{
     background-color: green;
 }
 
-.prueba.rojo{
+.rojo{
     background-color: red;
+}
+
+.text{
+    display: flex;
+    margin-top: 20%;
+}
+.context{
+    border-radius: 5px;
+    border: groove;
+}
+
+.cajaGuiones{
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
 }
