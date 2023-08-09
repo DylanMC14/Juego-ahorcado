@@ -1,3 +1,8 @@
+.body{
+    background-image: url("../images/kanae\ kosho\ hashira.jpg");
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
 .prueba{
     margin-top: 5%;
     display: flex;
@@ -7,12 +12,22 @@
 #title{
     display: flex;
     justify-content: center;
+    font: oblique bold 120% cursive;
+    font-size: 40px;
 }
 .botones{
     background-color: rgba(0, 255, 234, 0.326);
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
+    font: oblique bold 120% cursive;
+}
+
+.botones:hover{
+    cursor: pointer;
+    background-color: aqua;
+    border: inset;
+    text-shadow: 1px 1px violet;
 }
 
 .verde{
@@ -25,7 +40,7 @@
 
 .text{
     display: flex;
-    margin-top: 20%;
+    margin-top: 10%;
 }
 .context{
     border-radius: 5px;
@@ -36,4 +51,6 @@
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
+    font-size: 200%;
+    font: oblique bold 120% cursive;
 }

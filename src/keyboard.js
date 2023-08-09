@@ -1,3 +1,5 @@
+import { Panel } from "./panel.js";
+
 let contador = 0;
 
 
@@ -19,13 +21,22 @@ class Keyboard{
     showInCorrect(letter){}
 }
 const app = new Keyboard();
+const panel = new Panel();
 
 const array = app.createKeyboard();
 
 const verde = document.getElementById('verde');
 var text = document.getElementById("text");
 
+
+
 var context = document.createElement("input");
+context.id = 'input'
+
+// context.addEventListener('click', function(){
+//     panel.addWord('context.text')
+// })
+
 
 context.classList = 'context'
 
