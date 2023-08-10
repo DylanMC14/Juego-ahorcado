@@ -7,7 +7,7 @@ import { Panel } from "./panel.js";
 import { Result } from "./result.js";
 
 const panel = new Panel();
-panel.pintarGuiones();
+// panel.pintarGuiones();
 panel.addWord();
 
 const app = new Keyboard();

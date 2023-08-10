@@ -41,6 +41,7 @@ context.id = 'input'
 context.classList = 'context'
 
 text.appendChild(context)
+panel.pintarGuiones();
 
 array.map(key =>{
     const div = document.createElement('div')
@@ -50,11 +51,15 @@ array.map(key =>{
     div.classList = 'botones'
     p.textContent = key
 
+    
     div.appendChild(p)
     verde.appendChild(div)
     
 
-    div.addEventListener('click', function(){
+    div.addEventListener('click', () =>{
+        // debugger
+        panel.pintarPalabra(p.textContent);
+
         if (contador == 0) {
             div.classList.add("verde");
             contador=1;
@@ -62,13 +67,26 @@ array.map(key =>{
             div.classList.remove("verde");
             contador = 0;
         }
+
         if (contador == 0) {
             div.classList.add("botones");
             contador=0;
+        } else {
+            div.classList.remove("rojo");
+            contador = 1;
         } 
+
+        if (contador == 0) {
+            div.classList.add("rojo");
+            contador=0;
+        }
     })
 
 })
+
+// if () {
+    
+// }
   
 
 // console.log(app.showCorrect());
@@ -87,13 +105,13 @@ array.map(key =>{
 //         cajaprueba.classList.remove("verde");
 //         contador = 0;
 //     }
-//     if (contador == 0) {
-//         cajaprueba.classList.add("rojo");
-//         contador=0;
-//     } else {
-//         cajaprueba.classList.remove("rojo");
-//         contador = 1;
-//     }
+    // if (contador == 0) {
+    //     cajaprueba.classList.add("rojo");
+    //     contador=0;
+    // } else {
+    //     cajaprueba.classList.remove("rojo");
+    //     contador = 1;
+    // }
 // }
 // cajaprueba.addEventListener("click",dePrueba,true);
 
