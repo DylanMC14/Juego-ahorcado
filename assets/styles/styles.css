@@ -9,18 +9,35 @@
     justify-content: center;
     flex-wrap: wrap;
 }
+@font-face {
+    font-family: "letra";
+    src: url("../../public/go3v2.ttf");
+}
+@font-face {
+    font-family: "letra2";
+    src: url("../../public/Harukaze.otf");
+}
+@font-face {
+    font-family: "letra3";
+    src: url("../../public/SAKURATA.ttf");
+}
+@font-face {
+    font-family: "letra4";
+    src: url("../../public/YOZAKURA-Regular.otf");
+}
+
 #title{
     display: flex;
     justify-content: center;
-    font: oblique bold 120% cursive;
     font-size: 40px;
+    font-family: "letra";
 }
 .botones{
     background-color: rgba(0, 255, 234, 0.326);
     padding: 20px;
     margin: 10px;
     border-radius: 10px;
-    font: oblique bold 120% cursive;
+    font-family: "letra";
 }
 
 .botones:hover{
@@ -40,11 +57,13 @@
 
 .text{
     display: flex;
+    justify-content: space-around;
     margin-top: 10%;
 }
 .context{
     border-radius: 5px;
     border: groove;
+    height: 25px;
 }
 
 .cajaGuiones{
@@ -52,5 +71,8 @@
     justify-content: center;
     justify-content: space-evenly;
     font-size: 200%;
-    font: oblique bold 120% cursive;
+    /* font-family: "letra"; */
+}
+.imagen{
+    /* background-image: url("../images/muzan.png"); */
 }

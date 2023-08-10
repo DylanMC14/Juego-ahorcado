@@ -19,12 +19,20 @@ class Panel{
     addWord(){
         var context = document.getElementById("input");
         
-        // let value = '';
         context.addEventListener('click', () => {
            let value =  context.value
             console.log(value); 
             this.arreglo.push(value);
             console.log(this.arreglo);
+
+            // let haFallado = true;
+            // for (let i in number) {
+            //     if(value == number[i]){
+            //         lineas = reemplazar (lineas,i * 2,value);
+            //         haFallado = false
+            //         console.log(number);
+            //     }
+            // }
            
    
            if( !value) { // --No ingrese un campo vacio o numeros solos-- \\
@@ -51,13 +59,17 @@ class Panel{
            }
 
         })
+        // function reemplazar(number,i,character) {
+        //     return (number.substring(0,index) +
+        //     character +
+        //     number.substring(i + character.length)
+        //     );
+        // };
 
 
     }
 }
 
-// const panel = new Panel();
-// panel.pintarGuiones();
 
 
 export {Panel};
