@@ -73,11 +73,18 @@
     font-size: 50px;
     font-family: "letra2";
 }
-
-#imagendemuzan{
+/* .imagen{
     height: 200px;
     width: 200px;
 }
+#muzan{
+    height: 200px;
+    width: 200px;
+}
+.img {
+    height: 200px;
+    width: 200px;
+} */
 .contador{
     height: 200px;
     width: 150px;

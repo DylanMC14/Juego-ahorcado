@@ -5,7 +5,7 @@ class Pasarhg{
         this.arregloBusca = []
         this.arregloGuiones = []
     }
-
+ 
     pintarGuiones(){
         let number = this.arreglo[Math.floor(Math.random() * this.arreglo.length)];
         this.arregloBusca = Array.from(number)
@@ -25,19 +25,18 @@ class Pasarhg{
     pintarPalabra (letraviene){
        console.log('seleccionaste ', letraviene);
         this.arregloBusca.map((letra, posicion) =>{
-            if(letra == letraviene || letra == letraviene.toLowerCase()){
+            if(letra == letraviene || letra == letraviene){
                 console.log('correcta');
                 this.arregloGuiones[posicion] = letraviene;
             }
         })
 
-        var context = document.querySelector("cajaGuiones");
+        var context = document.querySelector(".cajaGuiones");
 
         for (let index = 0; index < this.arregloGuiones.length; index++) {
            const h1 = document.createElement('h1')
            h1.textContent = this.arregloGuiones[index]
 
-        //    context.appendChild(h1)
             
         }
         console.log(this.arregloGuiones);
@@ -48,4 +47,5 @@ class Pasarhg{
 }
 
 
+export {Pasarhg};
 

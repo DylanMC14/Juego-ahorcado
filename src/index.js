@@ -1,19 +1,23 @@
-// import {Keyboard} from "./keyboard.js";
-// import {Result} from "./result.js";
-// import {BodyParts} from "../src/bodyparts";
-
 import { Keyboard } from "./keyboard.js";
 import { Panel } from "./panel.js";
 import { Result } from "./result.js";
 import { HangmanGame} from "./hangmangame.js";
+import { BodyParts } from "./bodyparts.js";
 
+const imagen = document.getElementById("imgahorcado"); 
+const conta = 0;
+const bodyparts = new BodyParts();
 const panel = new Panel();
 const result = new Result();
 const hangmanGame = new HangmanGame ();
 const keyboard = new Keyboard();
+
+bodyparts.paintImage();
 const status = hangmanGame.getStatus();
-panel.paintPanel(status)
+panel.paintPanel(status);
 keyboard.createKeyboard();
+hangmanGame.checkLetter();
+
 const letterButtons = document.querySelectorAll(".botones");
 letterButtons.forEach((button) => {
     button.addEventListener("click", () => {
@@ -33,4 +37,18 @@ letterButtons.forEach((button) => {
     });
   });
 
-// console.log(apps.showResult());
+
+
+const cant_Palabras = ["manzanas","camisetas","caramelos",
+"streamer","microfono"];
+
+
+
+const startBtn = document.querySelector(".Start");
+startBtn.addEventListener("click", inicio);
+
+function inicio() {
+    startBtn.disabled = true;
+    console.log("hiciste click");
+    hangmanGame.initializeDispalyedWord();
+}
