@@ -4,7 +4,6 @@ import { Result } from "./result.js";
 import { HangmanGame} from "./hangmangame.js";
 import { BodyParts } from "./bodyparts.js";
 
-const imagen = document.getElementById("imgahorcado"); 
 const conta = 0;
 const bodyparts = new BodyParts();
 const panel = new Panel();
@@ -37,10 +36,6 @@ letterButtons.forEach((button) => {
     });
   });
 
-
-
-const cant_Palabras = ["manzanas","camisetas","caramelos",
-"streamer","microfono"];
 
 
 

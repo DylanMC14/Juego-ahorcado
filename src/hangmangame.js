@@ -2,8 +2,8 @@ class HangmanGame{
     constructor(){
         this.arreglo = ["Hola","Correo","Automovil","Avion","Submarino","Helicoptero","Estacion"];
         this.selectWord = "";
-        this.arregloBusca = []
-        this.arregloGuiones = []
+        this.arregloBusca = [];
+        this.arregloGuiones = [];
     }
 
     startGame (){}
@@ -19,6 +19,7 @@ class HangmanGame{
             this.arregloGuiones.push('_')
             const cajaGuiones = document.querySelector(".cajaGuiones");
             cajaGuiones.appendChild(lineas);
+            console.log(lineas);
         }
         console.log(number);
 
@@ -34,14 +35,17 @@ class HangmanGame{
                      
                  }
              })
-     
+             
+             var parrafo = document.querySelectorAll(".p");
              var context = document.querySelector(".cajaGuiones");
              const teclado = document.querySelectorAll(".botones");
+            //  console.log(parrafo);
      
             for (let i = 0; i < this.arregloGuiones.length; i++) {
                 if (letraviene == this.arregloGuiones[i]) {
                     console.log("si se encuentra");
-                     teclado[i].innerHTML=letraviene;
+                    parrafo.replace().innerHTML=letraviene;
+
                 }
                 
             }
