@@ -1,14 +1,14 @@
 class Keyboard{
     constructor(){
-        this.alfabeto= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+        this.alphabet= ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","Ñ","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
         this.keyboardContainer = document.getElementById('keyboardContainer');
     }
     
     createKeyboard(){
-        this.alfabeto.map(key =>{
+        this.alphabet.map(key =>{
             const div = document.createElement('div');
             const p = document.createElement('p');
-            div.classList = 'botones'
+            div.classList = 'buttons'
             p.textContent = key
             div.appendChild(p);
             div.setAttribute("data-letter", key);
@@ -19,18 +19,18 @@ class Keyboard{
 
     showCorrect(letter){
         const button = this.getLetterButton (letter);
-        button.classList.add("verde");
+        button.classList.add("green");
     }
      
 
     showInCorrect(letter){
         const button = this.getLetterButton (letter);
-        button.classList.add("rojo");
+        button.classList.add("red");
     }
 
 
     getLetterButton (letter){
-        return this.keyboardContainer.querySelector(`.botones[data-letter="${letter}"]`);
+        return this.keyboardContainer.querySelector(`.buttons[data-letter="${letter}"]`);
     }
 }
 

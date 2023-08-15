@@ -15,8 +15,8 @@ class Pasarhg{
             const lineas = document.createElement("p");
             lineas.textContent = "_";
             this.arregloGuiones.push('_')
-            const cajaGuiones = document.querySelector(".cajaGuiones");
-            cajaGuiones.appendChild(lineas);
+            const boxScripts = document.querySelector(".boxScripts");
+            boxScripts.appendChild(lineas);
         }
         console.log(number);
     }
@@ -31,7 +31,7 @@ class Pasarhg{
             }
         })
 
-        var context = document.querySelector(".cajaGuiones");
+        var context = document.querySelector(".boxScripts");
 
         for (let index = 0; index < this.arregloGuiones.length; index++) {
            const h1 = document.createElement('h1')

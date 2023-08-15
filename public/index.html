@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahorcado</title>
+    <title>Hangman game</title>
     <link rel="stylesheet" href="../assets/styles/styles.css">
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body class="body">
-    <h1 id="title">Ahorcado</h1>
-    <div class="cajaGuiones"></div>
+    <h1 id="title">Hangman game</h1>
+    <div class="boxScripts"></div>
     <div class="resultContainer"></div>
     <div class="text" id="text">
-        <div class="contador">
+        <div class="counter">
             <p id="strikes">Strikes</p>
-            <p id="cantidad">0</p>
+            <p id="amount">0</p>
         </div>
-        <div class="imagen">
-            <!-- <h1 id="muzan"></h1> -->
-            <img id="muzan" src="" alt="imagen del Ahorcado">
+        <div class="image">
+            <h1 id="muzan"></h1>
         </div>
         <button class="Start">Start</button>
     </div>
-    <div class="prueba" id="keyboardContainer"></div>
+    <div class="test" id="keyboardContainer"></div>
 </body>
 <script type="module" src="../src/index.js"></script>
-<!-- <script type="module" src="../src/prueba.js"></script> -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>

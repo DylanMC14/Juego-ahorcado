@@ -4,7 +4,6 @@ import { Result } from "./result.js";
 import { HangmanGame} from "./hangmangame.js";
 import { BodyParts } from "./bodyparts.js";
 
-const conta = 0;
 const bodyparts = new BodyParts();
 const panel = new Panel();
 const result = new Result();
@@ -18,29 +17,31 @@ const keyboard = new Keyboard();
 // hangmanGame.checkLetter();
 // hangmanGame.fillArrayLength();
 hangmanGame.startGame();
+bodyparts.updateImage();
 
-const letterButtons = document.querySelectorAll(".botones");
+const letterButtons = document.querySelectorAll(".buttons");
 letterButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const letter = button.getAttribute("data-letter");
-        console.log("este es letter",typeof letter);
+        console.log("this is letters",typeof letter);
         const isLetterCorrect = hangmanGame.checkLetter(letter);
 
-        console.log("esta es la prueba de lettercorrect", isLetterCorrect);
+        console.log("this is the lettercorrect test", isLetterCorrect);
 
         if (isLetterCorrect) {
             keyboard.showCorrect(letter);
-            var nuevoStatus = hangmanGame.getStatus(letter) ;
-            console.log("arreglo que llega: ",nuevoStatus);
-            panel.actualizarpanel(nuevoStatus);
+            var newStatus = hangmanGame.getStatus(letter) ;
+            console.log("this is the array that arrives: ",newStatus);
+            panel.refreshpanel(newStatus);
         } else {
             keyboard.showInCorrect(letter);
+            hangmanGame.checkIfPlayerLost();
         }
-        const obtenerPalabra = hangmanGame.getPlayWord();
+        const getWord = hangmanGame.getPlayWord();
         if (hangmanGame.checkIfPlayerWon()) {
-            result.showResult(true,obtenerPalabra);
+            result.showResult(true,getWord);
         } else if (hangmanGame.checkIfPlayerLost()) {
-            result.showResult(false,obtenerPalabra);
+            result.showResult(false,getWord);
         }       
     });
   });
@@ -49,10 +50,10 @@ letterButtons.forEach((button) => {
 
 
 const startBtn = document.querySelector(".Start");
-startBtn.addEventListener("click", inicio);
+startBtn.addEventListener("click", start);
 
-function inicio() {
+function start() {
     startBtn.disabled = true;
-    console.log("hiciste click");
+    console.log("You clicked");
     hangmanGame.initializeDispalyedWord();
 }

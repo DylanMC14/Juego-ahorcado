@@ -1,9 +1,9 @@
 class Result{
     constructor(){
-        this.message = "Volver a empezar";
+        this.message = "Start over";
         this.resultContainer = document.querySelector(".resultContainer");
-        this.victory = "Victoria, con la palabra ";
-        this.fail = "Perdiste, con la palabra ";
+        this.victory = "Victory, with the word ";
+        this.fail = "you lost, with the word ";
     }
 
 

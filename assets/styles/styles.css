@@ -3,7 +3,7 @@
     background-repeat: no-repeat;
     background-size: 110%;
 }
-.prueba{
+.test{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -17,10 +17,6 @@
     src: url("../../public/Harukaze.otf");
 }
 @font-face {
-    font-family: "letra3";
-    src: url("../../public/SAKURATA.ttf");
-}
-@font-face {
     font-family: "letra4";
     src: url("../../public/YOZAKURA-Regular.otf");
 }
@@ -31,7 +27,7 @@
     font-size: 40px;
     font-family: "letra";
 }
-.botones{
+.buttons{
     background-color: rgba(0, 255, 234, 0.326);
     padding: 20px;
     margin: 10px;
@@ -39,18 +35,18 @@
     font-family: "letra";
 }
 
-.botones:hover{
+.buttons:hover{
     cursor: pointer;
     background-color: aqua;
     border: inset;
     text-shadow: 1px 1px purple;
 }
 
-.verde{
+.green{
     background-color: green;
 }
 
-.rojo{
+.red{
     background-color: red;
 }
 
@@ -66,26 +62,15 @@
     margin-top: 60px;
 }
 
-.cajaGuiones{
+.boxScripts{
     display: flex;
     justify-content: center;
     justify-content: space-evenly;
     font-size: 50px;
     font-family: "letra2";
 }
-/* .imagen{
-    height: 200px;
-    width: 200px;
-}
-#muzan{
-    height: 200px;
-    width: 200px;
-}
-.img {
-    height: 200px;
-    width: 200px;
-} */
-.contador{
+
+.counter{
     height: 200px;
     width: 150px;
     font-family: "letra4";
@@ -104,7 +89,7 @@
     margin: 0;
     margin-top: 5px;
 }
-#cantidad{
+#amount{
     display: flex;
     justify-content: center;
     font-size: 150px;
