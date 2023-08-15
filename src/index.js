@@ -11,19 +11,28 @@ const result = new Result();
 const hangmanGame = new HangmanGame ();
 const keyboard = new Keyboard();
 
-bodyparts.paintImage();
-const status = hangmanGame.getStatus();
-panel.paintPanel(status);
-keyboard.createKeyboard();
-hangmanGame.checkLetter();
+// bodyparts.paintImage();
+// const status = hangmanGame.getStatus();
+// panel.paintPanel(status);
+// keyboard.createKeyboard();
+// hangmanGame.checkLetter();
+// hangmanGame.fillArrayLength();
+hangmanGame.startGame();
 
 const letterButtons = document.querySelectorAll(".botones");
 letterButtons.forEach((button) => {
     button.addEventListener("click", () => {
         const letter = button.getAttribute("data-letter");
+        console.log("este es letter",typeof letter);
         const isLetterCorrect = hangmanGame.checkLetter(letter);
+
+        console.log("esta es la prueba de lettercorrect", isLetterCorrect);
+
         if (isLetterCorrect) {
             keyboard.showCorrect(letter);
+            var nuevoStatus = hangmanGame.getStatus(letter) ;
+            console.log("arreglo que llega: ",nuevoStatus);
+            panel.actualizarpanel(nuevoStatus);
         } else {
             keyboard.showInCorrect(letter);
         }
