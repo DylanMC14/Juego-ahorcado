@@ -17,7 +17,7 @@ const keyboard = new Keyboard();
 // hangmanGame.checkLetter();
 // hangmanGame.fillArrayLength();
 hangmanGame.startGame();
-bodyparts.updateImage();
+// bodyparts.updateImage();
 
 const letterButtons = document.querySelectorAll(".buttons");
 letterButtons.forEach((button) => {
@@ -25,23 +25,33 @@ letterButtons.forEach((button) => {
         const letter = button.getAttribute("data-letter");
         console.log("this is letters",typeof letter);
         const isLetterCorrect = hangmanGame.checkLetter(letter);
-
+        console.log(hangmanGame.checkIfPlayerWon());
         console.log("this is the lettercorrect test", isLetterCorrect);
 
         if (isLetterCorrect) {
+            // debugger
             keyboard.showCorrect(letter);
-            var newStatus = hangmanGame.getStatus(letter) ;
+            var newStatus = hangmanGame.getStatus(letter);
             console.log("this is the array that arrives: ",newStatus);
             panel.refreshpanel(newStatus);
         } else {
             keyboard.showInCorrect(letter);
-            hangmanGame.checkIfPlayerLost();
+            var strikes = parseInt(document.getElementById("amount").textContent);
+            console.log('str int:',strikes);    
+            bodyparts.updateImage(strikes);
+            strikes++;
+            document.getElementById("amount").textContent= strikes;
+            alertPlayer();
+
         }
         const getWord = hangmanGame.getPlayWord();
         if (hangmanGame.checkIfPlayerWon()) {
             result.showResult(true,getWord);
-        } else if (hangmanGame.checkIfPlayerLost()) {
+            console.log('si');
+        } 
+        else if (hangmanGame.checkIfPlayerLost(strikes)) {
             result.showResult(false,getWord);
+            console.log('no');
         }       
     });
   });
@@ -57,3 +67,48 @@ function start() {
     console.log("You clicked");
     hangmanGame.initializeDispalyedWord();
 }
+
+
+function alertPlayer(){
+    var strikes = document.getElementById("amount").textContent;
+    // strikes.textContent = this.counter;
+    if (strikes == 6) {
+        Swal.fire({
+            title: 'BE CAREFUL!',
+            text: 'You only have 1 strike left',
+            imageUrl: '../assets/images/imagen2.jpg',
+            imageWidth: 500,
+            imageHeight: 400,
+            imageAlt: 'Custom image',
+          })
+      } else if (strikes == 7) {
+          Swal.fire({
+              title: 'OH NO!',
+              text: 'You lose',
+              imageUrl: '../assets/images/prueba.jpg',
+              imageWidth: 500,
+              imageHeight: 300,
+              imageAlt: 'Custom image',
+          })
+      }
+}
+
+// document.addEventListener("DOMContentLoaded", function() {
+//     var botonRecargar = document.getElementById("reloadbutton");
+//     botonRecargar.addEventListener("click", function() {
+//       window.location.reload(true);
+//     });
+//   });
+
+
+//   const playSound = function() {
+//     let element = document.createElement('div');
+//     element.innerHTML = `
+//     <audio autoplay loop>
+//     <source src="">
+//  </audio>
+//     `;
+//     document.body.appendChild(element);
+//     document.removeEventListener('click', playSound);
+// }
+// document.addEventListener('click', playSound);
