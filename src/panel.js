@@ -15,7 +15,6 @@ class Panel{
         // console.log("We are on new scripts",newScripts);
         for (let index = 0; index < newStatus.length; index++) {
            newScripts[index].textContent = newStatus[index]
-            
         }
     }
 }

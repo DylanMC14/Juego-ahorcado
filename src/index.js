@@ -10,25 +10,24 @@ const result = new Result();
 const hangmanGame = new HangmanGame ();
 const keyboard = new Keyboard();
 
-// bodyparts.paintImage();
-// const status = hangmanGame.getStatus();
-// panel.paintPanel(status);
-// keyboard.createKeyboard();
-// hangmanGame.checkLetter();
-// hangmanGame.fillArrayLength();
+let posi = 0;
+
 hangmanGame.startGame();
-// bodyparts.updateImage();
+
 
 const letterButtons = document.querySelectorAll(".buttons");
 letterButtons.forEach((button) => {
     button.addEventListener("click", () => {
+        // debugger
         const letter = button.getAttribute("data-letter");
         console.log("this is letters",typeof letter);
         const isLetterCorrect = hangmanGame.checkLetter(letter);
         console.log(hangmanGame.checkIfPlayerWon());
         console.log("this is the lettercorrect test", isLetterCorrect);
 
-        if (isLetterCorrect) {
+        const solution = hangmanGame.solution(letter, posi);
+
+        if (solution) {
             // debugger
             keyboard.showCorrect(letter);
             var newStatus = hangmanGame.getStatus(letter);
@@ -71,7 +70,6 @@ function start() {
 
 function alertPlayer(){
     var strikes = document.getElementById("amount").textContent;
-    // strikes.textContent = this.counter;
     if (strikes == 6) {
         Swal.fire({
             title: 'BE CAREFUL!',
@@ -93,12 +91,12 @@ function alertPlayer(){
       }
 }
 
-// document.addEventListener("DOMContentLoaded", function() {
-//     var botonRecargar = document.getElementById("reloadbutton");
-//     botonRecargar.addEventListener("click", function() {
-//       window.location.reload(true);
-//     });
-//   });
+document.addEventListener("DOMContentLoaded", function() {
+    var botonRecargar = document.getElementById("reloadbutton");
+    botonRecargar.addEventListener("click", function() {
+      window.location.reload(true);
+    });
+  });
 
 
 //   const playSound = function() {

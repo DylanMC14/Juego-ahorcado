@@ -120,7 +120,7 @@
 .Start:active{
     cursor: grabbing;
 }
-/* #reloadbutton{
+#reloadbutton{
     height: 50px;
     width: 150px;
     font-family: "letra";
@@ -136,4 +136,4 @@
 }
 #reloadbutton:active{
     cursor: grabbing;
-} */
+}

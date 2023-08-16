@@ -81,12 +81,19 @@ class HangmanGame {
       if (capitalletter === lettercomes.toUpperCase()) {
         console.log("correct");
         this.fixscripts[position] = lettercomes.toLowerCase();
-        return true;
+        // return true;
       }
-      // console.log(this.fixscripts);
     });
+    return this.fixscripts
 
-    return this.fixscripts;
+  }
+
+  solution(letter, posi){
+    for (let index = posi; index < this.fixSearch.length; index++) {
+      if(this.fixSearch[index] == letter.toLowerCase()){
+        return true
+      }
+    }
   }
 
   checkIfPlayerWon() {
