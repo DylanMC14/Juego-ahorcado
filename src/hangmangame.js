@@ -40,8 +40,8 @@ class HangmanGame {
       "eagle"
     ];
     this.selectWord = "";
-    this.fixSearch = []; //A L G O
-    this.fixscripts = []; //_ _ _
+    this.fixSearch = []; 
+    this.fixscripts = []; 
     this.newFix = [];
     this.arrayStatus = [];
     this.counter = 0;
@@ -55,7 +55,6 @@ class HangmanGame {
     this.keyboard.createKeyboard();
     this.bodyparts.paintImage();
     this.fillArrayLength();
-    // this.bodyparts.updateImage();
   }
 
   getPlayWord(){}
@@ -81,7 +80,6 @@ class HangmanGame {
       if (capitalletter === lettercomes.toUpperCase()) {
         console.log("correct");
         this.fixscripts[position] = lettercomes.toLowerCase();
-        // return true;
       }
     });
     return this.fixscripts
@@ -140,13 +138,11 @@ class HangmanGame {
     var littleword = this.selectWord;
     var wordUppercase = littleword.toUpperCase();
     this.newFix = wordUppercase.split("");
-    // console.log("letter status: ", letter);
     for (let index = 0; index < littleword.length; index++) {
       if (letter === this.newFix[index]) {
         this.arrayStatus[index] = letter;
       }
     }
-    // console.log("Hi, I'm in arrayStatus", this.arrayStatus);
     return this.arrayStatus;
   }
 }

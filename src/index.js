@@ -99,14 +99,14 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-//   const playSound = function() {
-//     let element = document.createElement('div');
-//     element.innerHTML = `
-//     <audio autoplay loop>
-//     <source src="">
-//  </audio>
-//     `;
-//     document.body.appendChild(element);
-//     document.removeEventListener('click', playSound);
-// }
-// document.addEventListener('click', playSound);
+  const playSound = function() {
+    let element = document.createElement('div');
+    element.innerHTML = `
+    <audio autoplay loop>
+    <source src="../assets/audio/Demon Slayer Kimetsu no Yaiba - EP 19 SongKamado Tanjiro no Uta (1).mp3">
+ </audio>
+    `;
+    document.body.appendChild(element);
+    document.removeEventListener('click', playSound);
+}
+document.addEventListener('click', playSound);

@@ -2,7 +2,6 @@ class BodyParts{
     constructor(){
         this.containerImage = document.getElementById("image");
         this.element = document.getElementById("muzan");
-        // this.counter = 0;
         this.images = [
             '../assets/images/1.png',
             '../assets/images/2.png',
