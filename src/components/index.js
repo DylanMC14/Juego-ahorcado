@@ -11,8 +11,22 @@ const result = new Result();
 const hangmanGame = new HangmanGame ();
 const keyboard = new Keyboard();
 const pokeapi = new PokenApi();
-
 let posi = 0;
+
+// const recuperate = document.querySelector(".image")
+
+// async function collect() {
+//   const wait = await pokeapi.logMovies();
+//   console.log(wait.sprites.other["official-artwork"]["front_default"]);
+//   const div = document.createElement("div");
+//   const img = document.createElement("img");
+
+//   img.src = wait.sprites.other["official-artwork"]["front_default"]
+
+//   recuperate.appendChild(img)
+// }
+// collect();
+
 
 hangmanGame.startGame();
 

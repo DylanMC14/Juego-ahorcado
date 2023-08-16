@@ -5,6 +5,7 @@ import { PokenApi } from "../api/pokemon-api.js";
 
 class HangmanGame {
   constructor() {
+    this.pokemon = 0;
     this.array = [
       "hello",
       "mail",
@@ -59,16 +60,16 @@ class HangmanGame {
     this.bodyparts.paintImage();
     this.fillArrayLength();
   }
-  // async function recibirDatosApi(){
+  async recibirDatosApi(){
 
-//   let data = await pokeapi.logMovies(pokeapi.randomNumber);
-//   let image = document.createElement('p');
-//   image.textContent = data.name;
-//   let x = document.querySelector('.image')
-//   x.appendChild(image)
-//   console.log(data,'Aqui');
-// }
-// recibirDatosApi();
+  let data = await pokeapi.logMovies(pokeapi.randomNumber);
+  let image = document.createElement('p');
+  image.textContent = data.name;
+  let x = document.querySelector('.image')
+  x.appendChild(image)
+  console.log(data,'Aqui');
+}
+
 
   getPlayWord(){}
 
