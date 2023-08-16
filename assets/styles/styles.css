@@ -138,7 +138,7 @@
     cursor: grabbing;
 }
 
-.modal-contenido{
+.modal-content{
     display: flex;
     background-color: white;
     border-radius: 10px;

@@ -114,10 +114,10 @@ document.addEventListener('click', playSound);
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    var modal = document.getElementById("miModal");
-    var cerrarModal = document.querySelector(".cerrar");
+    var modal = document.getElementById("mymodal");
+    var closeModal = document.querySelector(".close");
     modal.style.display = "block";
-    cerrarModal.addEventListener("click", function() {
+    closeModal.addEventListener("click", function() {
       modal.style.display = "none";
     });
     window.addEventListener("click", function(event) {
