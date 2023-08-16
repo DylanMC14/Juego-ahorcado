@@ -137,3 +137,16 @@
 #reloadbutton:active{
     cursor: grabbing;
 }
+
+.modal-contenido{
+    display: flex;
+    background-color: white;
+    border-radius: 10px;
+    font-family: "letra";
+    border: inset;
+    border-color: black;
+    margin-right: 10%;
+    margin-top: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
