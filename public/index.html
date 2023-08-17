@@ -15,8 +15,12 @@
     <div class="resultContainer"></div>
     <div class="text" id="text">
         <div class="counter">
-            <p id="strikes">Strikes</p>
+            <p id="strikes">Strikes:</p>
             <p id="amount">0</p>
+        </div>
+        <div class="counter2">
+            <p id="points">Points:</p>
+            <p id="amountpoint">100</p>
         </div>
         <div id="mymodal" class="modal">
           <div class="modal-content">
@@ -32,10 +36,17 @@
         <div class="image">
             <img id="muzan" src="" alt="juego ahorcado imagen"/>
         </div>
-        <button class="Start">Start</button>
-        <button id="reloadbutton">Refresh</button>
+        <div id="buttonContainer">
+            <button class="Start">Start</button>
+            <button id="reloadbutton">Refresh</button>
+            <button id="clue">Clue?</button>
+        </div>
+    
     </div>
     <div class="test" id="keyboardContainer"></div>
+    <div id="boxversion">
+        <p id="nameversion">Pokemon version</p>
+    </div>
 </body>
 <script type="module" src="../src/components/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

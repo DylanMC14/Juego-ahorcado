@@ -76,7 +76,7 @@ function alertPlayer(){
         Swal.fire({
             title: 'BE CAREFUL!',
             text: 'You only have 1 strike left',
-            imageUrl: '../assets/images/imagen2.jpg',
+            imageUrl: '../assets/images/kyogre.jpg',
             imageWidth: 500,
             imageHeight: 400,
             imageAlt: 'Custom image',
@@ -85,7 +85,7 @@ function alertPlayer(){
           Swal.fire({
               title: 'OH NO!',
               text: 'You lose',
-              imageUrl: '../assets/images/prueba.jpg',
+              imageUrl: '../assets/images/groudon.jpg',
               imageWidth: 500,
               imageHeight: 300,
               imageAlt: 'Custom image',
@@ -101,18 +101,19 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-  const playSound = function() {
-    let element = document.createElement('div');
-    element.innerHTML = `
-    <audio autoplay loop>
-    <source src="../assets/audio/Demon Slayer Kimetsu no Yaiba - EP 19 SongKamado Tanjiro no Uta (1).mp3">
-    </audio>
-    `;
-    // <source src="../assets/audio/Professor (Main Theme) - Pokémon GO OST (Extended).mp3">     // cambiar el lugar de cada source dependiendo le juego
-    document.body.appendChild(element);
-    document.removeEventListener('click', playSound);
-}
-document.addEventListener('click', playSound);
+//   const playSound = function() {
+//     let element = document.createElement('div');
+//     element.innerHTML = `
+//     <audio autoplay loop>
+//     <source src="../assets/audio/Professor (Main Theme) - Pokémon GO OST (Extended).mp3">  
+//     </audio>
+//     `;
+    
+//     //  <source src="../assets/audio/Demon Slayer Kimetsu no Yaiba - EP 19 SongKamado Tanjiro no Uta (1).mp3">  // cambiar el lugar de cada source dependiendo le juego
+//     document.body.appendChild(element);
+//     document.removeEventListener('click', playSound);
+// }
+// document.addEventListener('click', playSound);
 
 
 

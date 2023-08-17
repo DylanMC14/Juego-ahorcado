@@ -6,42 +6,6 @@ import { PokenApi } from "../api/pokemon-api.js";
 class HangmanGame {
   constructor() {
     this.pokemon = 0;
-    this.array = [
-      "hello",
-      "mail",
-      "car",
-      "plane",
-      "submarine",
-      "helicopter",
-      "season",
-      "university",
-      "gentleman",
-      "heat",
-      "tree",
-     "butterfly",
-      "computer",
-      "cathedral",
-      "guitar",
-      "pijama",
-      "Kiwi",
-      "ball",
-      "hero",
-      "ship",
-      "train",
-      "bear",
-      "apple",
-      "gorilla",
-      "zebra",
-      "parrot",
-      "darling",
-      "lion",
-      "tiger",
-      "jaguar",
-      "crocodile",
-      "choice",
-      "ant",
-      "eagle"
-    ];
     this.selectWord = "";
     this.fixSearch = []; 
     this.newFixSearch = [];
@@ -66,7 +30,6 @@ class HangmanGame {
    this.bodyparts.paintImage();
    this.fillArrayLength();
    this.data= await this.initializePokeApiData();
-  //  this.panel.paintPanel(this.selectWord);
    this.asyncTest();
   }
   asyncTest(){
@@ -77,23 +40,7 @@ class HangmanGame {
     console.log(this.data.name, 'palabra');
 }
 
-//   async receiveDataApi(){
-//   let data = await this.pokeapi.logMovies(this.pokeapi.randomNumber);
-//   let image = document.createElement('p');
-//   image.textContent = data.name;
-//   let x = document.querySelector('.image')
-//   x.appendChild(image)
-//   console.log(data,'Aqui');
-// }
-
-
-  getPlayWord(){}
-
   initializeDispalyedWord() {
-    // let number = this.array[Math.floor(Math.random() * this.array.length)];
-    // this.fixSearch = Array.from(number);
-    // console.log(this.fixSearch);
-    // this.selectWord = number;
     for (let index = 0; index < this.selectWord.length; index++) {
       const lines = document.createElement("p");
       lines.className = "paragraph";
@@ -135,7 +82,7 @@ class HangmanGame {
       Swal.fire({
         title: 'Congratulations!',
         text: 'You have won',
-        imageUrl: '../assets/images/hashiras(2).jpg',
+        imageUrl: '../assets/../assets/images/rayquaza(2).jpg',
         imageWidth: 500,
         imageHeight: 300,
         imageAlt: 'Custom image',
