@@ -6,17 +6,22 @@ class PokenApi{
     async logMovies(id) {
         console.log(id);
         const endpoint = new URL( `https://pokeapi.co/api/v2/pokemon/${id}/`)
-        const response = await fetch(endpoint);
-        if (response.status === 404) {
-            console.log('No se encontro');
-            return;
+        try {
+            const response = await fetch(endpoint);
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! Status: ${response.status}`);
+              }
+
+            const data = await response.json();
+            return data;
+
+        } catch (error) {
+            console.error(error);
         }
-        const data = await response.json();
-        return data;
 
     }
 
-  
       
 
 

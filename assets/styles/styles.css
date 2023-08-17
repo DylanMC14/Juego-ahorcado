@@ -45,7 +45,7 @@
 .buttons:hover{
     cursor: pointer;
     background-color: aqua;
-    border: inset;
+    /* border: inset; */
     text-shadow: 1px 1px purple;
 }
 
