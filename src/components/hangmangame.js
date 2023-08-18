@@ -8,6 +8,7 @@ class HangmanGame {
     this.pokeimage = '';
     this.pokeElement = document.getElementById("pokeimage");
     this.pokeElement.style.visibility= 'hidden';
+    this.pokeAbility = "";
     this.selectWord = "";
     this.fixSearch = []; 
     this.newFixSearch = [];
@@ -37,8 +38,8 @@ class HangmanGame {
   }
   asyncTest(){
     console.log('After initialization', this.selectedWord);
-    this.pokeimage= this.data.sprites.other["official-artwork"]["front_default"];
     console.log(this.data.sprites.other["official-artwork"]["front_shiny"]);
+    console.log("estas son las habilidades",this.data.abilities["0"]["ability"]["name"]);
     console.log(this.pokeimage);
     console.log(this.data);
     console.log(this.data.name, 'palabra');
@@ -134,6 +135,13 @@ class HangmanGame {
     this.pokeElement.style.width = "200px";
     this.pokeElement.style.height = "200px";
     this.pokeElement.style.visibility= 'visible';
+  }
+
+  paintType(){}
+
+  paintAbilities(){
+    this.pokeAbility = this.data.abilities["0"]["ability"]["name"];
+    alert (this.pokeAbility)
   }
 }
 

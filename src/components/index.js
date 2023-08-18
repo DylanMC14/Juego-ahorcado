@@ -144,3 +144,15 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   getClue();
+
+  function getClue3(){
+    const clue2Btn = document.getElementById("clue3");
+    clue2Btn.addEventListener("click", clue3);
+
+    function clue3() {
+        console.log("solicitaste una pista");
+        hangmanGame.paintAbilities();
+        counterPoints.innerHTML = cant-20;
+    }
+  }
+  getClue3();
