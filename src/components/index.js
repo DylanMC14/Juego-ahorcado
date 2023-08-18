@@ -13,7 +13,7 @@ const keyboard = new Keyboard();
 const pokeapi = new PokenApi();
 let posi = 0;
 let counterPoints = document.getElementById("amountpoint");
-let cant = 100;
+var cant = 100;
 
 
 hangmanGame.startGame();
@@ -133,6 +133,8 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
+  console.log("la cantidad de puntos es ", cant);
+
   function getClue(){
     const clueBtn = document.getElementById("clue");
     clueBtn.addEventListener("click", clue);
@@ -140,19 +142,55 @@ document.addEventListener("DOMContentLoaded", function() {
     function clue() {
         console.log("solicitaste una pista");
         hangmanGame.paintPokeImage();
-        counterPoints.innerHTML = cant-20;
+        cant = cant - 50;
+        counterPoints.textContent = cant;
+        console.log("la cantidad de puntos despues de esta pista es ", cant);
+        clueBtn.disabled = true;
     }
   }
   getClue();
 
+  function getClueRv(){
+    const clueBtn = document.getElementById("clueRv");
+    clueBtn.addEventListener("click", clueRv);
+
+    function clueRv() {
+        console.log("solicitaste una pista");
+        hangmanGame.paintPokeImageRv();
+        cant = cant - 50;
+        counterPoints.textContent = cant;
+        console.log("la cantidad de puntos despues de esta pista es ", cant);
+        clueBtn.disabled = true;
+    }
+  }
+  getClueRv();
+
+  function getClue2(){
+    const clue2Btn = document.getElementById("clue2");
+    clue2Btn.addEventListener("click", clue2);
+
+    function clue2() {
+        console.log("solicitaste una pista");
+        hangmanGame.paintType();
+        cant = cant - 30;
+        counterPoints.textContent = cant;
+        console.log("la cantidad de puntos despues de esta pista es ", cant);
+        clue2Btn.disabled = true;
+    }
+  }
+  getClue2();
+
   function getClue3(){
-    const clue2Btn = document.getElementById("clue3");
-    clue2Btn.addEventListener("click", clue3);
+    const clue3Btn = document.getElementById("clue3");
+    clue3Btn.addEventListener("click", clue3);
 
     function clue3() {
         console.log("solicitaste una pista");
         hangmanGame.paintAbilities();
-        counterPoints.innerHTML = cant-20;
+        cant = cant - 20;
+        counterPoints.textContent = cant;
+        console.log("la cantidad de puntos despues de esta pista es ", cant);
+        clue3Btn.disabled = true;
     }
   }
   getClue3();

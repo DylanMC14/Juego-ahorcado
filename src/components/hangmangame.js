@@ -8,6 +8,9 @@ class HangmanGame {
     this.pokeimage = '';
     this.pokeElement = document.getElementById("pokeimage");
     this.pokeElement.style.visibility= 'hidden';
+    this.pokeElementRv = document.getElementById("pokeimageRv");
+    this.pokeElementRv.style.visibility= 'hidden';
+    this.pokeType = "";
     this.pokeAbility = "";
     this.selectWord = "";
     this.fixSearch = []; 
@@ -40,6 +43,7 @@ class HangmanGame {
     console.log('After initialization', this.selectedWord);
     console.log(this.data.sprites.other["official-artwork"]["front_shiny"]);
     console.log("estas son las habilidades",this.data.abilities["0"]["ability"]["name"]);
+    console.log("este es el 1er tipo",this.data.types["0"]["type"]["name"]);
     console.log(this.pokeimage);
     console.log(this.data);
     console.log(this.data.name, 'palabra');
@@ -137,11 +141,42 @@ class HangmanGame {
     this.pokeElement.style.visibility= 'visible';
   }
 
-  paintType(){}
+  paintPokeImageRv(){
+    this.pokeElementRv.src = this.data.sprites.other["official-artwork"]["front_default"];
+    this.pokeElementRv.style.width = "200px";
+    this.pokeElementRv.style.height = "200px";
+    this.pokeElementRv.style.visibility= 'visible';
+  }
+
+  paintType(){
+    this.pokeType = this.data.types.map(nombres =>nombres.type.name);
+
+    console.log(this.pokeType);
+    this.pokeTypeTotal = "The pokemon is of type: " + this.pokeType;
+    Swal.fire({
+      title: this.pokeTypeTotal,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
+  }
 
   paintAbilities(){
-    this.pokeAbility = this.data.abilities["0"]["ability"]["name"];
-    alert (this.pokeAbility)
+    this.pokeAbility1 = this.data.abilities["0"]["ability"]["name"];
+    this.pokeAbility2 = this.data.abilities["1"]["ability"]["name"]
+    this.pokeAbilityTotal = "Two abilities of the pokemon are: " + this.pokeAbility1 + "y" + this.pokeAbility2;
+    Swal.fire({
+      title: this.pokeAbilityTotal,
+      showClass: {
+        popup: 'animate__animated animate__fadeInDown'
+      },
+      hideClass: {
+        popup: 'animate__animated animate__fadeOutUp'
+      }
+    })
   }
 }
 
