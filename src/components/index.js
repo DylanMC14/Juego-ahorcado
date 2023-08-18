@@ -12,10 +12,11 @@ const hangmanGame = new HangmanGame ();
 const keyboard = new Keyboard();
 const pokeapi = new PokenApi();
 let posi = 0;
+let counterPoints = document.getElementById("amountpoint");
+let cant = 100;
 
 
 hangmanGame.startGame();
-
 
 const letterButtons = document.querySelectorAll(".buttons");
 letterButtons.forEach((button) => {
@@ -94,8 +95,8 @@ function alertPlayer(){
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    var botonRecargar = document.getElementById("reloadbutton");
-    botonRecargar.addEventListener("click", function() {
+    var reloadbutton = document.getElementById("reloadbutton");
+    reloadbutton.addEventListener("click", function() {
       window.location.reload(true);
     });
   });
@@ -130,3 +131,16 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
   });
+
+
+  function getClue(){
+    const clueBtn = document.getElementById("clue");
+    clueBtn.addEventListener("click", clue);
+
+    function clue() {
+        console.log("solicitaste una pista");
+        hangmanGame.paintPokeImage();
+        counterPoints.innerHTML = cant-20;
+    }
+  }
+  getClue();

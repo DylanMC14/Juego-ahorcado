@@ -5,7 +5,9 @@ import { PokenApi } from "../api/pokemon-api.js";
 
 class HangmanGame {
   constructor() {
-    this.pokemon = 0;
+    this.pokeimage = '';
+    this.pokeElement = document.getElementById("pokeimage");
+    this.pokeElement.style.visibility= 'hidden';
     this.selectWord = "";
     this.fixSearch = []; 
     this.newFixSearch = [];
@@ -23,6 +25,7 @@ class HangmanGame {
     this.data = await this.pokeApi.logMovies(this.pokeApi.randomNumber);
     this.selectWord  = this.data.name;
     this.newFixSearch = this.selectWord.split("")
+    this.pokeimage= this.data.sprites.other["official-artwork"]["front_default"];
     return this.data;
 }
  async startGame() {
@@ -34,8 +37,9 @@ class HangmanGame {
   }
   asyncTest(){
     console.log('After initialization', this.selectedWord);
-    console.log(this.data.sprites.other["official-artwork"]["front_default"]);
+    this.pokeimage= this.data.sprites.other["official-artwork"]["front_default"];
     console.log(this.data.sprites.other["official-artwork"]["front_shiny"]);
+    console.log(this.pokeimage);
     console.log(this.data);
     console.log(this.data.name, 'palabra');
 }
@@ -50,6 +54,7 @@ class HangmanGame {
       boxScripts.appendChild(lines);
     }
   }
+  getPlayWord(){}
   checkLetter(lettercomes) {
     this.newFixSearch.map((letter, position) => {
       const capitalletter = letter.toUpperCase();
@@ -122,6 +127,13 @@ class HangmanGame {
       }
     }
     return this.arrayStatus;
+  }
+  
+  paintPokeImage(){
+    this.pokeElement.src = this.data.sprites.other["official-artwork"]["front_default"];
+    this.pokeElement.style.width = "200px";
+    this.pokeElement.style.height = "200px";
+    this.pokeElement.style.visibility= 'visible';
   }
 }
 

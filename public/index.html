@@ -34,18 +34,29 @@
                  where it will be hanged, so the player has 7 options to fail.</p></div>
         </div>
         <div class="image">
-            <img id="muzan" src="" alt="juego ahorcado imagen"/>
+            <img id="muzan" src="" alt=""/>
         </div>
         <div id="buttonContainer">
             <button class="Start">Start</button>
             <button id="reloadbutton">Refresh</button>
-            <button id="clue">Clue?</button>
+            <div class="dropdown">
+                <button class="dropbtn">Clue?</button>
+                <div class="dropdown-content">
+                  <button id="clue">Image</button>
+                  <button id="clue2">Type</button>
+                  <button id="clue2">Abilities</button>
+                </div>
+              </div>
+            
+            <div class="cluePokemon">
+                <img id="pokeimage" src="" alt="">
+            </div>
         </div>
     
     </div>
     <div class="test" id="keyboardContainer"></div>
     <div id="boxversion">
-        <p id="nameversion">Pokemon version</p>
+        <p id="nameversion">Pokemon edition</p>
     </div>
 </body>
 <script type="module" src="../src/components/index.js"></script>
