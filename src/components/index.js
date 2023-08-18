@@ -142,7 +142,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function clue() {
         console.log("solicitaste una pista");
         hangmanGame.paintPokeImage();
-        cant = cant - 50;
+        cant = cant - 30;
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clueBtn.disabled = true;
@@ -151,16 +151,16 @@ document.addEventListener("DOMContentLoaded", function() {
   getClue();
 
   function getClueRv(){
-    const clueBtn = document.getElementById("clueRv");
-    clueBtn.addEventListener("click", clueRv);
+    const clueRvBtn = document.getElementById("clueRv");
+    clueRvBtn.addEventListener("click", clueRv);
 
     function clueRv() {
         console.log("solicitaste una pista");
         hangmanGame.paintPokeImageRv();
-        cant = cant - 50;
+        cant = cant - 40;
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
-        clueBtn.disabled = true;
+        clueRvBtn.disabled = true;
     }
   }
   getClueRv();
@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function clue2() {
         console.log("solicitaste una pista");
         hangmanGame.paintType();
-        cant = cant - 30;
+        cant = cant - 20;
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clue2Btn.disabled = true;
@@ -187,7 +187,7 @@ document.addEventListener("DOMContentLoaded", function() {
     function clue3() {
         console.log("solicitaste una pista");
         hangmanGame.paintAbilities();
-        cant = cant - 20;
+        cant = cant - 10;
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clue3Btn.disabled = true;

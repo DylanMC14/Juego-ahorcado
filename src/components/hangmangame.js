@@ -82,12 +82,12 @@ class HangmanGame {
   }
 
   checkIfPlayerWon() {
-    let variable = JSON.stringify(this.fixscripts) === JSON.stringify(this.newFixSearch);
+    let comparison = JSON.stringify(this.fixscripts) === JSON.stringify(this.newFixSearch);
     console.log(this.fixscripts);
     console.log(this.newFixSearch,'Chequear si gano con newFix');
-    console.log(variable);
+    console.log(comparison);
 
-    if (variable === true) {
+    if (comparison === true) {
       console.log('ganaste');
       Swal.fire({
         title: 'Congratulations!',
