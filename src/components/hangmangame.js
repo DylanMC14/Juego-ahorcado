@@ -106,12 +106,11 @@ class HangmanGame {
     }
   }
   
-  checkIfPlayerLost(strikes) {
-    if (strikes>6) {
-      console.log('Holaaaaaaaaaaaaaaa');
-    }
-     
-     
+  checkIfPlayerLost() {
+    var lost = document.querySelectorAll(".buttons");
+    lost.disabled = true;
+    console.log(lost);
+    console.log('Holaaaaaaaaaaaaaaa');
   }
   
   setStatus() {}

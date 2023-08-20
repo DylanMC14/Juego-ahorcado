@@ -194,3 +194,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
   getClue3();
+
+
+  function prueba() {
+    console.log("soy el timeout");
+  }
+
+  function probando() {
+    const seguimos = setInterval(prueba,1000);
+
+    setTimeout(()=> {
+     clearInterval(seguimos);
+     console.log("ya termine");
+     hangmanGame.checkIfPlayerLost();
+    },5000);
+  }
+
+probando();
