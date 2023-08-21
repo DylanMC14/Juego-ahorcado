@@ -109,7 +109,6 @@ class HangmanGame {
   checkIfPlayerLost() {
     var lost = document.querySelectorAll(".buttons");
     lost.disabled = true;
-    console.log(lost);
     console.log('Holaaaaaaaaaaaaaaa');
   }
   

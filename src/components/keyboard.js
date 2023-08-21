@@ -6,7 +6,7 @@ class Keyboard{
     
     createKeyboard(){
         this.alphabet.map(key =>{
-            const div = document.createElement('div');
+            const div = document.createElement('button');
             const p = document.createElement('p');
             div.classList = 'buttons'
             p.textContent = key

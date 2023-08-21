@@ -12,31 +12,27 @@
     left: 1000px;
 }
 
+#clock{
+    display: flex;
+    font-family: "pokeletra2";
+    letter-spacing: 4px;
+    text-shadow: 
+    0 0 5px rgb(3, 236, 236),
+    0 0 10px rgb(231, 232, 228),
+    0 0 20px rgb(237, 238, 237),
+    0 0 180px white;
+}
+
 .test{
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
 
-@font-face {
-    font-family: "pokeletra";
-    src: url("../../public/Pokemon\ Hollow.ttf");
-}
+
 @font-face {
     font-family: "pokeletra2";
     src: url("../../public/Pokemon\ Solid.ttf");
-}
-@font-face {
-    font-family: "letra";
-    src: url("../../public/go3v2.ttf");
-}
-@font-face {
-    font-family: "letra2";
-    src: url("../../public/Harukaze.otf");
-}
-@font-face {
-    font-family: "letra4";
-    src: url("../../public/YOZAKURA-Regular.otf");
 }
 
 #title{
@@ -46,8 +42,12 @@
     letter-spacing: 4px;
     margin: 0px;
     color: black;
-    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
     text-decoration: underline;
+    text-shadow: 
+    0 0 5px gold,
+    0 0 10px rgba(255, 217, 0, 0.744),
+    0 0 20px rgba(255, 217, 0, 0.626),
+    0 0 180px white;
 }
 
 #nameversion{
@@ -74,8 +74,8 @@
     font-family: "pokeletra2";
     box-shadow: 
     0 0 5px gold,
-    0 0 10px gold,
-    0 0 20px gold,
+    0 0 10px rgba(255, 217, 0, 0.744),
+    0 0 20px rgba(255, 217, 0, 0.626),
     0 0 180px white;
     border: none;
     color: black;
@@ -134,7 +134,39 @@
     font-family: "pokeletra2";
 }
 
+.counter:hover{
+    transform: 
+    perspective(250px)
+    rotateX(10deg)
+    translateY(-5%)
+    translateZ(0);
+}
+
+.counter::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: 
+    linear-gradient(
+        to bottom,
+        transparent 10%,
+        rgba(252, 250, 250, 0.5) 50%,
+        rgb(249, 247, 247) 95%
+    );
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+/* .counter:hover::before{
+    opacity: 1;
+} */
+
+
 .counter{
+    position: relative;
+    transition: all .3s ease;
     height: 200px;
     width: 150px;
     font-family: "pokeletra2";
@@ -146,9 +178,9 @@
     border: ridge;
     border-color: black;
     box-shadow: 
-    0 0 5px lightseagreen,
-    0 0 10px lightseagreen,
-    0 0 20px lightseagreen,
+    0 0 5px rgb(3, 236, 236),
+    0 0 10px rgb(231, 232, 228),
+    0 0 20px rgb(237, 238, 237),
     0 0 180px white;
 }
 
@@ -170,6 +202,8 @@
 }
 
 .counter2{
+    position: relative;
+    transition: all .3s ease;
     height: 200px;
     width: 150px;
     font-family: "pokeletra2";
@@ -181,11 +215,40 @@
     border: ridge;
     border-color: black;
     box-shadow: 
-    0 0 5px lightseagreen,
-    0 0 10px lightseagreen,
-    0 0 20px lightseagreen,
+    0 0 5px rgb(3, 236, 236),
+    0 0 10px rgb(231, 232, 228),
+    0 0 20px rgb(237, 238, 237),
     0 0 180px white;
 }
+
+.counter2:hover{
+    transform: 
+    perspective(250px)
+    rotateX(10deg)
+    translateY(-5%)
+    translateZ(0);
+}
+
+.counter2::before{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    background-image: 
+    linear-gradient(
+        to bottom,
+        transparent 10%,
+        rgba(252, 250, 250, 0.5) 50%,
+        rgb(249, 247, 247) 95%
+    );
+    opacity: 0;
+    transition: all .3s ease;
+}
+
+/* .counter2:hover::before{
+    opacity: 1;
+} */
 
 #amountpoint{
     display: flex;
@@ -205,6 +268,7 @@
     letter-spacing: 1px;
 }
 
+
 .Start{
     letter-spacing: 4px;
     display: flex;
@@ -213,17 +277,6 @@
     font-family: "pokeletra2";
     height: 50px;
     width: 90px;
-    box-shadow:
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
-    ;
     background-color: white;
     padding: 16px 32px;
     color: black;
@@ -247,6 +300,15 @@
         background-position: 0 0;
     }
 }
+
+/* #buttonContainer{
+    box-shadow: 
+    0 0 5px gold,
+    0 0 10px gold,
+    0 0 20px gold,
+    0 0 180px white;
+    border-radius: 10px;
+} */
 
 .Start:hover{
     background-color: rgba(247, 247, 247, 0.282);
@@ -275,7 +337,7 @@
     animation: glowing 20s linear infinite;
 }
 
-#reloadbutton{
+#reloadbutton {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -284,17 +346,6 @@
     font-family: "pokeletra2";
     font-size: 20px;
     letter-spacing: 4px;
-    box-shadow: 
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
-    ;
     background-color: white;
     padding: 16px 32px;
     color: black;
@@ -333,7 +384,7 @@
     animation: glowing 20s linear infinite;
 }
 
-.modal-content{
+/* .modal-content{
     display: flex;
     background-color: white;
     border-radius: 10px;
@@ -341,7 +392,7 @@
     border: inset;
     border-color: black;
     letter-spacing: 2px;
-}
+} */
 
 #clue{
     display: flex;
@@ -352,17 +403,6 @@
     font-family: "pokeletra2";
     font-size: 20px;
     letter-spacing: 4px;
-    box-shadow: 
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
-    ;
     background-color: white;
     padding: 16px 32px;
     color: black;
@@ -410,17 +450,6 @@
     font-family: "pokeletra2";
     font-size: 20px;
     letter-spacing: 4px;
-    box-shadow: 
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
-    ;
     background-color: white;
     padding: 16px 32px;
     color: black;
@@ -468,17 +497,6 @@
     font-family: "pokeletra2";
     font-size: 20px;
     letter-spacing: 4px;
-    box-shadow: 
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
-    ;
     background-color: white;
     padding: 16px 32px;
     color: black;
@@ -526,17 +544,6 @@
     font-family: "pokeletra2";
     font-size: 20px;
     letter-spacing: 4px;
-    box-shadow: 
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
-    ;
     background-color: white;
     padding: 16px 32px;
     color: black;
@@ -606,16 +613,6 @@
     border-radius: 12px;
     font-weight: bold;
     position: relative;
-    box-shadow: 
-    0 0 5px gray,
-    0 0 10px gray,
-    0 0 20px gray,
-    0 0 40px gray,
-    0 0 80px white,
-    0 0 90px white,
-    0 0 100px white,
-    0 0 140px white,
-    0 0 180px white
 }
   
 .dropdown {

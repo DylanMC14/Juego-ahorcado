@@ -1,6 +1,6 @@
 class PokenApi{
     constructor(){
-        this.randomNumber = Math.floor(Math.random() *(200 - 0 ));
+        this.randomNumber = Math.floor(Math.random() *(500 - 0 ));
     }
 
     async logMovies(id) {

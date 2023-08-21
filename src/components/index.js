@@ -68,6 +68,7 @@ function start() {
     startBtn.disabled = true;
     console.log("You clicked");
     hangmanGame.initializeDispalyedWord();
+    ready();
 }
 
 
@@ -102,19 +103,17 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 
-//   const playSound = function() {
-//     let element = document.createElement('div');
-//     element.innerHTML = `
-//     <audio autoplay loop>
-//     <source src="../assets/audio/Professor (Main Theme) - Pokémon GO OST (Extended).mp3">  
-//     </audio>
-//     `;
-    
-//     //  <source src="../assets/audio/Demon Slayer Kimetsu no Yaiba - EP 19 SongKamado Tanjiro no Uta (1).mp3">  // cambiar el lugar de cada source dependiendo le juego
-//     document.body.appendChild(element);
-//     document.removeEventListener('click', playSound);
-// }
-// document.addEventListener('click', playSound);
+  const playSound = function() {
+    let element = document.createElement('div');
+    element.innerHTML = `
+    <audio autoplay loop>
+    <source src="../assets/audio/Professor (Main Theme) - Pokémon GO OST (Extended).mp3">  
+    </audio>
+    `;
+    document.body.appendChild(element);
+    document.removeEventListener('click', playSound);
+}
+document.addEventListener('click', playSound);
 
 
 
@@ -146,6 +145,16 @@ document.addEventListener("DOMContentLoaded", function() {
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clueBtn.disabled = true;
+        if (cant == 0) {
+          Swal.fire({
+            title: 'OH NO!',
+            text: 'You lose, you ran out of points',
+            imageUrl: '../assets/images/groudon.jpg',
+            imageWidth: 500,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+        }
     }
   }
   getClue();
@@ -161,6 +170,16 @@ document.addEventListener("DOMContentLoaded", function() {
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clueRvBtn.disabled = true;
+        if (cant == 0) {
+          Swal.fire({
+            title: 'OH NO!',
+            text: 'You lose, you ran out of points',
+            imageUrl: '../assets/images/groudon.jpg',
+            imageWidth: 500,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+        }
     }
   }
   getClueRv();
@@ -176,6 +195,16 @@ document.addEventListener("DOMContentLoaded", function() {
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clue2Btn.disabled = true;
+        if (cant == 0) {
+          Swal.fire({
+            title: 'OH NO!',
+            text: 'You lose, you ran out of points',
+            imageUrl: '../assets/images/groudon.jpg',
+            imageWidth: 500,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+        }
     }
   }
   getClue2();
@@ -191,23 +220,81 @@ document.addEventListener("DOMContentLoaded", function() {
         counterPoints.textContent = cant;
         console.log("la cantidad de puntos despues de esta pista es ", cant);
         clue3Btn.disabled = true;
+        if (cant == 0) {
+          Swal.fire({
+            title: 'OH NO!',
+            text: 'You lose, you ran out of points',
+            imageUrl: '../assets/images/groudon.jpg',
+            imageWidth: 500,
+            imageHeight: 300,
+            imageAlt: 'Custom image',
+        })
+        }
     }
   }
   getClue3();
 
+let minutes = 0;
+let seconds = 0;
 
-  function prueba() {
-    console.log("soy el timeout");
+function ready() {
+  function secondsReload() {
+    let txtSeconds;
+  
+    if (seconds < 0) {
+      seconds = 59;
+    } else if (seconds < 10) {
+      txtSeconds = `0${seconds}`;
+    } else {
+      txtSeconds = seconds;
+    }
+    var secondsTime = document.getElementById("seconds");
+    secondsTime.innerHTML = txtSeconds;
+    seconds --;
+    minutesReload(seconds) 
   }
-
-  function probando() {
-    const seguimos = setInterval(prueba,1000);
-
-    setTimeout(()=> {
-     clearInterval(seguimos);
-     console.log("ya termine");
-     hangmanGame.checkIfPlayerLost();
-    },5000);
+  
+  let interval = setInterval(secondsReload,1000)
+  
+  function minutesReload(seconds) {
+    let txtMinutes;
+    
+    if (seconds == -1 && minutes !== 0) {
+      setTimeout(()=> {
+        minutes --;
+      },1000)
+    } else if (seconds == -1 && minutes == 0) {
+      setTimeout(()=> {
+        minutes = 4;
+      },1000)
+    } else if (minutes === 0 && seconds === 0) {
+      Swal.fire({
+        title: 'OH NO!',
+        text: 'You lose',
+        imageUrl: '../assets/images/groudon.jpg',
+        imageWidth: 500,
+        imageHeight: 300,
+        imageAlt: 'Custom image',
+    })
+      clearInterval(interval);
+    }
+    
+    if (minutes < 10) {
+      txtMinutes = `0${minutes}`;
+    } else{
+      txtMinutes = minutes;
+    }
+    var minutesTime = document.getElementById("minutes");
+    minutesTime.innerHTML = txtMinutes;
   }
+}
 
-probando();
+Swal.fire({
+  title: 'How to play? When you press the start button, 1 random pokemon will appear and the countdown will begin, do not let time run out or you will lose, you must guess the name of the pokemon, you will have 100 points at the start and 4 clues, which you can use nothing else 3, if you use the 4 you will lose since points will be deducted, you can also lose if you are wrong 7 times',
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp'
+  }
+})
