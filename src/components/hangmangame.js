@@ -92,7 +92,7 @@ class HangmanGame {
       Swal.fire({
         title: 'Congratulations!',
         text: 'You have won',
-        imageUrl: '../assets/../assets/images/rayquaza(2).jpg',
+        imageUrl: 'https://media2.giphy.com/media/jP4pPl5z1lccFcGvR0/200w.webp?cid=ecf05e47xt88kqo4e55j2rwtzrue7kww72rlt52jsxzopkfc&ep=v1_gifs_search&rid=200w.webp&ct=g',
         imageWidth: 500,
         imageHeight: 300,
         imageAlt: 'Custom image',
